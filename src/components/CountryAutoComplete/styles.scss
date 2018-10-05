@@ -3,6 +3,13 @@
 @import "assets/vendor/bemify.scss";
 
 @include block("countryAutoComplete") {
+  p {
+    color: $color-blue-bayoux;
+    font-size: 12px;
+    @include min-small {
+      font-size: 18px;
+    }
+  }
   width: 100%;
   text-align: center;
 

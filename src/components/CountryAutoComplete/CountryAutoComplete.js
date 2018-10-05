@@ -11,8 +11,7 @@
 import React from 'react'
 import './styles.css'
 //Dependencies
-import PlacesAutocomplete from 'react-places-autocomplete';
-import {
+import PlacesAutocomplete, {
   geocodeByAddress,
   geocodeByPlaceId,
   getLatLng,
@@ -35,7 +34,7 @@ class CountryAutoComplete extends React.Component {
 
   handleSelect = selectedCity => {
     geocodeByAddress(selectedCity)
-      .then(results => this.props.onPlaceSelected(results))
+      .then(results => this.props.onPlaceSelected(results[0]))
       .catch(error => this.props.onPlaceSelectedError(error));
   };
 
@@ -63,7 +62,6 @@ class CountryAutoComplete extends React.Component {
               </div>
               <div className="autocomplete-dropdown-container">
                 {suggestions.slice(3).map(suggestion => {
-                  console.log(suggestion);
                   <p ><b>{this.state.selectedCity}</b>{suggestion.formattedSuggestion.mainText.slice(this.state.selectedCity.length)}</p>
                   return (
                     <div
@@ -78,7 +76,7 @@ class CountryAutoComplete extends React.Component {
                 {suggestions.length == 0 &&
                   <div>
                     <p>or</p>
-                    <p>use my <p className={"currentLocation"}>current Location</p></p>
+                    <p>use my <p className={"currentLocation"} onClick={this.props.onCurrentLocationSelected}>current Location</p></p>
                   </div>}
               </div>
             </div>

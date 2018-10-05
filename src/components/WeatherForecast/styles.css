@@ -27,12 +27,18 @@
 .flex-grid .space {
   flex: 1; }
 
+.col {
+  font-size: 20px; }
+  @media only screen and (min-width: 768px) {
+    .col {
+      font-size: 34px; } }
+
 @media (max-width: 400px) {
   padding: 0;
   .col {
     width: 100%;
-    background-color: #783ca6;
-    margin: 0 0 10px 0; }
+    margin: 0 0 10px 0;
+    font-size: 8px; }
     .col:hover {
       color: #fc7d6d; } }
 
@@ -154,6 +160,9 @@
 .nextDaysContainer {
   overflow-x: scroll;
   align-items: stretch; }
+  @media only screen and (min-width: 768px) {
+    .nextDaysContainer {
+      margin-top: 5%; } }
   .nextDaysContainer .col {
     margin-top: 10px;
     margin-right: 10px;

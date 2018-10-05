@@ -7,10 +7,10 @@ body {
 
 p {
   color: #4d6773;
-  font-size: 12px; }
+  font-size: 14px; }
   @media only screen and (min-width: 768px) {
     p {
-      font-size: 18px; } }
+      font-size: 27px; } }
 
 .title {
   margin: 0;

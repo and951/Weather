@@ -30,17 +30,19 @@
 .flex-grid .space {
   flex: 1;
 }
+.col {
+  font-size: 20px;
+  @include min-small {
+    font-size: 34px;
+  }
+}
 
 @media (max-width: 400px) {
   padding: 0;
   .col {
     width: 100%;
-    background-color: rgb(
-      random($limit: 255),
-      random($limit: 255),
-      random($limit: 255)
-    );
     margin: 0 0 10px 0;
+    font-size: 8px;
     &:hover {
       color: $default-active-color;
     }
@@ -183,6 +185,9 @@
  */
 
 .nextDaysContainer {
+  @include min-small {
+    margin-top: 5%;
+  }
   overflow-x: scroll;
   align-items: stretch;
   .col {

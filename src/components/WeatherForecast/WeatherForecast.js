@@ -12,7 +12,7 @@
 
 //Dependencies 
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import tuc from 'temp-units-conv';
 import MaterialIcon from 'material-icons-react';
 import Toggle from 'react-toggle'
 import "react-toggle/style.css" // for ES6 modules
@@ -29,15 +29,25 @@ class WeatherForecast extends Component {
       checked: false,
       deegree: 'F'
     };
+    this.calculateTemp = this.calculateTemp.bind(this);
     this.handleSwitchButtonChange = this.handleSwitchButtonChange.bind(this);
+
   }
 
   /**
-   * 
+   * This method is in charge of handling the temp switch
    * @param {*} checked 
    */
-  handleSwitchButtonChange(checked) {
-    this.setState({ checked });
+  handleSwitchButtonChange() {
+    this.setState(prevState => ({ checked: !prevState.checked }));
+  }
+
+  /**
+   * This method is in charge of calculating the temp variable
+   * @param {*} temp 
+   */
+  calculateTemp(temp) {
+    return this.state.checked ? `${Math.round(tuc.k2c(temp))}°C` : `${Math.round(tuc.k2f(temp))}°F`
   }
 
   render() {
@@ -49,8 +59,8 @@ class WeatherForecast extends Component {
         <div class="flex-grid">
           <div class="col">
             <div className="goBackIcon">
-              <MaterialIcon icon="arrow_back" />
-              <p className="cityName" >Taillin</p>
+              <MaterialIcon icon="arrow_back" onClick={this.props.return} />
+              <p className="cityName" >{this.props.weatherObj.cityName}</p>
             </div>
           </div>
           <div class="space" />
@@ -63,64 +73,67 @@ class WeatherForecast extends Component {
                 unchecked: <h6>F°</h6>,
               }}
               className='switchButton'
-              onChange={this.handleTofuChange} />
+              onChange={() => { this.handleSwitchButtonChange() }} />
           </div>
         </div>
         {/* 
           Date Section
         */}
         <div class="flex-grid date">
-          <div class="col"><p className="subtitle">Tuesday, December 6th 2016</p></div>
+          <div class="col"><p className="subtitle">{this.props.weatherObj.date}</p></div>
         </div>
         <div class="flex-grid">
-          <div class="col"><p className="weather">Ligth Snow</p></div>
+          <div class="col"><p className="weather">{this.props.weatherObj.weather}</p></div>
         </div>
         {/* 
           Actual Weather 
         */}
         <div class="flex-grid actualTemperatureContainer">
-          <div class="col actualTemperature">39°F</div>
+          <div class="col actualTemperature">{this.calculateTemp(this.props.weatherObj.temperature)}</div>
           <div class="col">
-            <i class="wi wi-day-sunny actualTemperature actualTemperatureElement "></i>
+            <i class={"wi  actualTemperature actualTemperatureElement " + this.props.weatherObj.icon}></i>
           </div>
-
           <div class="col actualTemperatureElement">
-            <div class="flex-grid ">
-              <div class="col ">Morning</div>
-              <div class="col">39°F</div>
-            </div>
+            {this.props.weatherObj.morning &&
+              <div class="flex-grid ">
+                <div class="col ">Morning</div>
+                <div class="col">{this.calculateTemp(this.props.weatherObj.morning)}</div>
+              </div>}
 
-            <div class="flex-grid">
-              <div class="col ">Day</div>
-              <div class="col">39°F</div>
-            </div>
+            {this.props.weatherObj.day &&
+              <div class="flex-grid">
+                <div class="col ">Day</div>
+                <div class="col">{this.calculateTemp(this.props.weatherObj.day)}</div>
+              </div>}
 
-            <div class="flex-grid">
-              <div class="col ">Evening</div>
-              <div class="col">39°F</div>
-            </div>
+            {this.props.weatherObj.evening &&
+              <div class="flex-grid">
+                <div class="col ">Evening</div>
+                <div class="col">{this.calculateTemp(this.props.weatherObj.evening)}</div>
+              </div>}
 
-            <div class="flex-grid">
-              <div class="col ">Noon</div>
-              <div class="col">39°F</div>
-            </div>
-
+            {this.props.weatherObj.noon &&
+              <div class="flex-grid">
+                <div class="col ">Noon</div>
+                <div class="col">{this.calculateTemp(this.props.weatherObj.noon)}
+                </div>
+              </div>}
+            <div class="space" />
           </div>
-          <div class="space" />
         </div>
         {/* 
           Next Days Weather 
         */}
         <div class="flex-grid nextDaysContainer">
-          {[0, 0, 0, 0, 0, 0, 0].map((element) => {
+          {Object.keys(this.props.weatherObj.nextDays).map((weatherKey) => {
             return <div class="col">
               <div class="flex-grid">
-                <div class="col">Day</div>
+                <div class="col">{weatherKey}</div>
               </div>
               <div class="flex-grid">
-                <div class="col"><i class="wi wi-day-sunny temperatureIcon"></i></div>
+                <div class="col"><i class={"wi temperatureIcon " + this.props.weatherObj.nextDays[weatherKey].icon}></i></div>
               </div>
-              <div class="col">Temp</div>
+              <div class="col">{this.calculateTemp(this.props.weatherObj.nextDays[weatherKey].temperature)}</div>
             </div>
           })}
 

@@ -10,7 +10,7 @@
  */
 import config from '../config/env'
 
-import apiRequest from './apiRequest'
+import axios from 'axios';
 import { getUrl } from '../utils/generalFunctions'
 import {
   GET_WEATHER_BY_GEOLOC,
@@ -33,14 +33,11 @@ export const getWeatherByGeoloc = (lat, lon) => {
       }
     )
     console.log(finalURL)
-    apiRequest({
-      url: finalURL,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      onSuccess: response => { resolve(response) },
-      onError: error => { reject(error) },
-    })
-  })
+    fetch(finalURL)
+      .then(response => response.json())
+      .then(data => resolve(data))
+      .catch(error => reject(error));
 
+  })
 }
+
