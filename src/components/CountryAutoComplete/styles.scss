@@ -1,0 +1,74 @@
+@import "assets/styles/constants.scss";
+@import "assets/tools/breakpoints.scss";
+@import "assets/vendor/bemify.scss";
+
+@include block("countryAutoComplete") {
+  width: 100%;
+  text-align: center;
+
+  .input {
+    width: 50%;
+    width: 50%;
+    font-size: $size-mobile-titles;
+    text-align: center;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid $color-black;
+    outline: none;
+    margin-bottom: 15px;
+    color: $default-fontColor;
+
+    & :hover {
+      cursor: pointer;
+      text-align: center;
+      color: $default-active-color;
+    }
+    & :focus {
+      border-bottom: 1px solid $default-active-color;
+    }
+    @include min-small {
+      font-size: $size-titles;
+    }
+  }
+  .suggestion {
+    width: 50%;
+    font-size: $size-titles;
+    margin-left: 25%;
+
+    & :hover {
+      cursor: pointer;
+      text-align: center;
+      color: $default-active-color;
+    }
+  }
+  .coincidence {
+    color: $default-active-color;
+    font-weight: bolder;
+  }
+
+  .searchIcon {
+    cursor: pointer;
+    border-bottom: 1px solid $color-black;
+    display: inline;
+
+    & :hover {
+      color: $default-active-color;
+    }
+    @include min-small {
+      font-size: 34px;
+    }
+  }
+  .currentLocation {
+    text-align: center;
+    display: inline;
+    border-bottom: 1px dotted $color-black;
+    cursor: pointer;
+
+    & :hover {
+      border-bottom: 1px dotted $default-active-color;
+      color: $default-active-color;
+    }
+  }
+}

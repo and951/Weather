@@ -1,0 +1,202 @@
+@import "assets/styles/constants.scss";
+@import "assets/tools/breakpoints.scss";
+@import "assets/vendor/bemify.scss";
+
+/***
+ *        _____                           _  
+ *       / ____|                         | | 
+ *      | |  __  ___ _ __   ___ _ __ __ _| | 
+ *      | | |_ |/ _ \ '_ \ / _ \ '__/ _` | | 
+ *      | |__| |  __/ | | |  __/ | | (_| | | 
+ *       \_____|\___|_| |_|\___|_|  \__,_|_| 
+ *                                           
+ *                                           
+ */
+.container {
+  color: $default-fontColor;
+  margin: 0;
+  padding: 25px;
+  @include min-small {
+    display: block;
+    padding: 50px;
+  }
+}
+.flex-grid {
+  display: flex;
+}
+.flex-grid .col {
+  flex: 1;
+}
+.flex-grid .space {
+  flex: 1;
+}
+
+@media (max-width: 400px) {
+  padding: 0;
+  .col {
+    width: 100%;
+    background-color: rgb(
+      random($limit: 255),
+      random($limit: 255),
+      random($limit: 255)
+    );
+    margin: 0 0 10px 0;
+    &:hover {
+      color: $default-active-color;
+    }
+  }
+}
+.flex-grid {
+  margin: 0 0 5px 0;
+}
+
+/***
+ *       _   _                                 _____                            
+ *      | \ | |                        ___    |  __ \                           
+ *      |  \| | __ _ _ __ ___   ___   ( _ )   | |  | | ___  __ _ _ __ ___  ___  
+ *      | . ` |/ _` | '_ ` _ \ / _ \  / _ \/\ | |  | |/ _ \/ _` | '__/ _ \/ _ \ 
+ *      | |\  | (_| | | | | | |  __/ | (_>  < | |__| |  __/ (_| | | |  __/  __/ 
+ *      |_| \_|\__,_|_| |_| |_|\___|  \___/\/ |_____/ \___|\__, |_|  \___|\___| 
+ *                                                          __/ |               
+ *                                                         |___/                
+ */
+.cityName {
+  margin: 0;
+  display: inline-block;
+  font-size: 34px;
+  font-weight: bolder;
+  margin-left: 25px;
+}
+
+.goBackIcon {
+  cursor: pointer;
+
+  display: inline-block;
+  margin: 0 15px 0 0;
+  @include min-small {
+    display: block;
+    padding-bottom: 6px;
+  }
+  & :hover {
+    color: $default-active-color;
+  }
+}
+
+.switchButton {
+  cursor: pointer;
+  position: absolute;
+  right: 50px;
+  display: inline-block;
+  border-radius: 25px;
+  h6 {
+    margin: 5px;
+  }
+  &.react-toggle .react-toggle-track {
+    background-color: white;
+    border: 1px solid $color-black;
+  }
+  &.react-toggle--checked .react-toggle-track {
+    background-color: white;
+    h6 {
+      margin-left: 0px;
+    }
+  }
+}
+.react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: white;
+}
+.react-toggle--checked .react-toggle-thumb {
+  left: 27px;
+  border-color: $color-black;
+}
+.centered {
+  flex-direction: column;
+}
+
+/***
+ *      _____        _                 __          __        _   _               
+ *     |  __ \      | |         ___    \ \        / /       | | | |              
+ *     | |  | | __ _| |_ ___   ( _ )    \ \  /\  / /__  __ _| |_| |__   ___ _ __ 
+ *     | |  | |/ _` | __/ _ \  / _ \/\   \ \/  \/ / _ \/ _` | __| '_ \ / _ \ '__|
+ *     | |__| | (_| | ||  __/ | (_>  <    \  /\  /  __/ (_| | |_| | | |  __/ |   
+ *     |_____/ \__,_|\__\___|  \___/\/     \/  \/ \___|\__,_|\__|_| |_|\___|_|   
+ *                                                                               
+ *                                                                               
+ */
+
+.date {
+  margin-top: 5%;
+}
+.actualTemperatureContainer {
+  overflow-x: scroll;
+  align-items: stretch;
+  color: $color-tonys-pink;
+  margin-top: 30px;
+  .col {
+    width: 250%;
+    margin-right: 54px;
+    text-align: left;
+  }
+  .flex-grid {
+    .col {
+      width: 34px;
+    }
+  }
+}
+.actualTemperature {
+  font-size: $size-mobile-big-titles;
+  color: $color-tonys-pink;
+
+  margin-right: 100%;
+
+  @include min-small {
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: $size-big-titles;
+    display: block;
+    padding-bottom: 6px;
+  }
+}
+.actualTemperatureElement {
+  @include min-small {
+    margin-left: 40px;
+    margin-right: 50px;
+    margin-top: 10px;
+  }
+}
+
+.weather {
+  margin: 0;
+  font-size: 25px;
+  font-weight: lighter;
+}
+
+/***
+ *      _   _           _     _____                  
+ *     | \ | |         | |   |  __ \                 
+ *     |  \| | _____  _| |_  | |  | | __ _ _   _ ___ 
+ *     | . ` |/ _ \ \/ / __| | |  | |/ _` | | | / __|
+ *     | |\  |  __/>  <| |_  | |__| | (_| | |_| \__ \
+ *     |_| \_|\___/_/\_\\__| |_____/ \__,_|\__, |___/
+ *                                          __/ |    
+ *                                         |___/     
+ */
+
+.nextDaysContainer {
+  overflow-x: scroll;
+  align-items: stretch;
+  .col {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
+.temperatureIcon {
+  font-size: $size-subtitles;
+
+  &:hover {
+    color: $default-active-color;
+  }
+}

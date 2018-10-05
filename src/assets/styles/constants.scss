@@ -1,0 +1,38 @@
+// COLORS
+// Use the color name given by this website: http://chir.ag/projects/name-that-color/
+// Sample: $color-endeavour: #0054A8;
+
+$color-black: #000000;
+$color-white: #ffffff;
+$color-red: #ff3333;
+$color-salmon: #fc7d6d;
+$color-boulder: #7d7d7d;
+$color-blue-bayoux: #4d6773;
+$color-tonys-pink: #e39784;
+
+// FONTS
+// Create the font-family names based on the font-faces imported in /src/assets/fonts.scss
+// Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+
+// Font Variables
+$roboto-slab: "Open Sans", sans-serif;
+
+//Font size
+$size-big-titles: 120px;
+$size-titles: 43px;
+$size-subtitles: 34px;
+$size-normal-text: 18px;
+
+//Mobile
+
+//Font size
+$size-mobile-big-titles: 70px;
+$size-mobile-titles: 20px;
+$size-mobile-subtitles: 16px;
+$size-mobile-normal-text: 12px;
+
+//Default colors
+$default-background-color: $color-salmon;
+$default-active-color: $color-salmon;
+$default-fontColor: $color-boulder;

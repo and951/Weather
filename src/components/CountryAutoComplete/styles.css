@@ -1,0 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+.countryAutoComplete {
+  width: 100%;
+  text-align: center; }
+  .countryAutoComplete .input {
+    width: 50%;
+    width: 50%;
+    font-size: 20px;
+    text-align: center;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    margin-bottom: 15px;
+    color: #7d7d7d; }
+    .countryAutoComplete .input :hover {
+      cursor: pointer;
+      text-align: center;
+      color: #fc7d6d; }
+    .countryAutoComplete .input :focus {
+      border-bottom: 1px solid #fc7d6d; }
+    @media only screen and (min-width: 768px) {
+      .countryAutoComplete .input {
+        font-size: 43px; } }
+  .countryAutoComplete .suggestion {
+    width: 50%;
+    font-size: 43px;
+    margin-left: 25%; }
+    .countryAutoComplete .suggestion :hover {
+      cursor: pointer;
+      text-align: center;
+      color: #fc7d6d; }
+  .countryAutoComplete .coincidence {
+    color: #fc7d6d;
+    font-weight: bolder; }
+  .countryAutoComplete .searchIcon {
+    cursor: pointer;
+    border-bottom: 1px solid #000000;
+    display: inline; }
+    .countryAutoComplete .searchIcon :hover {
+      color: #fc7d6d; }
+    @media only screen and (min-width: 768px) {
+      .countryAutoComplete .searchIcon {
+        font-size: 34px; } }
+  .countryAutoComplete .currentLocation {
+    text-align: center;
+    display: inline;
+    border-bottom: 1px dotted #000000;
+    cursor: pointer; }
+    .countryAutoComplete .currentLocation :hover {
+      border-bottom: 1px dotted #fc7d6d;
+      color: #fc7d6d; }

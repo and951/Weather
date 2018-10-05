@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+.main-app-container__container {
+  width: 80%;
+  height: 80%;
+  background-color: #ffffff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  @media only screen and (min-width: 768px) {
+    .main-app-container__container {
+      width: 70%;
+      height: 70%; } }
+
+.main-app-container__countryAutoComplete {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }

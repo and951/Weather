@@ -1,0 +1,56 @@
+/* General Styles - Mobile First */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+@import url(./weather-icons.min.css);
+body {
+  background-color: #fc7d6d;
+  font-family: "Open Sans", sans-serif; }
+
+p {
+  color: #4d6773;
+  font-size: 12px; }
+  @media only screen and (min-width: 768px) {
+    p {
+      font-size: 18px; } }
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  color: #4d6773;
+  display: inline-block; }
+  @media only screen and (min-width: 768px) {
+    .title {
+      font-size: 43px; } }
+
+.subtitle {
+  margin: 0;
+  font-size: 16px;
+  color: #4d6773;
+  font-weight: 100;
+  display: inline-block; }
+  @media only screen and (min-width: 768px) {
+    .subtitle {
+      font-size: 34px; } }
+
+.visible-mobile {
+  display: block; }
+  @media only screen and (min-width: 768px) {
+    .visible-mobile {
+      display: none; } }
+
+.visible-desktop {
+  display: none; }
+  @media only screen and (min-width: 768px) {
+    .visible-desktop {
+      display: block; } }
+
+.visible-mobile-flex {
+  display: flex; }
+  @media only screen and (min-width: 768px) {
+    .visible-mobile-flex {
+      display: none; } }
+
+.visible-desktop-flex {
+  display: none; }
+  @media only screen and (min-width: 768px) {
+    .visible-desktop-flex {
+      display: flex; } }

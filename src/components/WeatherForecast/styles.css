@@ -1,0 +1,166 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+/***
+ *        _____                           _  
+ *       / ____|                         | | 
+ *      | |  __  ___ _ __   ___ _ __ __ _| | 
+ *      | | |_ |/ _ \ '_ \ / _ \ '__/ _` | | 
+ *      | |__| |  __/ | | |  __/ | | (_| | | 
+ *       \_____|\___|_| |_|\___|_|  \__,_|_| 
+ *                                           
+ *                                           
+ */
+.container {
+  color: #7d7d7d;
+  margin: 0;
+  padding: 25px; }
+  @media only screen and (min-width: 768px) {
+    .container {
+      display: block;
+      padding: 50px; } }
+
+.flex-grid {
+  display: flex; }
+
+.flex-grid .col {
+  flex: 1; }
+
+.flex-grid .space {
+  flex: 1; }
+
+@media (max-width: 400px) {
+  padding: 0;
+  .col {
+    width: 100%;
+    background-color: #783ca6;
+    margin: 0 0 10px 0; }
+    .col:hover {
+      color: #fc7d6d; } }
+
+.flex-grid {
+  margin: 0 0 5px 0; }
+
+/***
+ *       _   _                                 _____                            
+ *      | \ | |                        ___    |  __ \                           
+ *      |  \| | __ _ _ __ ___   ___   ( _ )   | |  | | ___  __ _ _ __ ___  ___  
+ *      | . ` |/ _` | '_ ` _ \ / _ \  / _ \/\ | |  | |/ _ \/ _` | '__/ _ \/ _ \ 
+ *      | |\  | (_| | | | | | |  __/ | (_>  < | |__| |  __/ (_| | | |  __/  __/ 
+ *      |_| \_|\__,_|_| |_| |_|\___|  \___/\/ |_____/ \___|\__, |_|  \___|\___| 
+ *                                                          __/ |               
+ *                                                         |___/                
+ */
+.cityName {
+  margin: 0;
+  display: inline-block;
+  font-size: 34px;
+  font-weight: bolder;
+  margin-left: 25px; }
+
+.goBackIcon {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 15px 0 0; }
+  @media only screen and (min-width: 768px) {
+    .goBackIcon {
+      display: block;
+      padding-bottom: 6px; } }
+  .goBackIcon :hover {
+    color: #fc7d6d; }
+
+.switchButton {
+  cursor: pointer;
+  position: absolute;
+  right: 50px;
+  display: inline-block;
+  border-radius: 25px; }
+  .switchButton h6 {
+    margin: 5px; }
+  .switchButton.react-toggle .react-toggle-track {
+    background-color: white;
+    border: 1px solid #000000; }
+  .switchButton.react-toggle--checked .react-toggle-track {
+    background-color: white; }
+    .switchButton.react-toggle--checked .react-toggle-track h6 {
+      margin-left: 0px; }
+
+.react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
+  background-color: white; }
+
+.react-toggle--checked .react-toggle-thumb {
+  left: 27px;
+  border-color: #000000; }
+
+.centered {
+  flex-direction: column; }
+
+/***
+ *      _____        _                 __          __        _   _               
+ *     |  __ \      | |         ___    \ \        / /       | | | |              
+ *     | |  | | __ _| |_ ___   ( _ )    \ \  /\  / /__  __ _| |_| |__   ___ _ __ 
+ *     | |  | |/ _` | __/ _ \  / _ \/\   \ \/  \/ / _ \/ _` | __| '_ \ / _ \ '__|
+ *     | |__| | (_| | ||  __/ | (_>  <    \  /\  /  __/ (_| | |_| | | |  __/ |   
+ *     |_____/ \__,_|\__\___|  \___/\/     \/  \/ \___|\__,_|\__|_| |_|\___|_|   
+ *                                                                               
+ *                                                                               
+ */
+.date {
+  margin-top: 5%; }
+
+.actualTemperatureContainer {
+  overflow-x: scroll;
+  align-items: stretch;
+  color: #e39784;
+  margin-top: 30px; }
+  .actualTemperatureContainer .col {
+    width: 250%;
+    margin-right: 54px;
+    text-align: left; }
+  .actualTemperatureContainer .flex-grid .col {
+    width: 34px; }
+
+.actualTemperature {
+  font-size: 70px;
+  color: #e39784;
+  margin-right: 100%; }
+  @media only screen and (min-width: 768px) {
+    .actualTemperature {
+      margin-top: 0px;
+      padding-top: 0px;
+      font-size: 120px;
+      display: block;
+      padding-bottom: 6px; } }
+
+@media only screen and (min-width: 768px) {
+  .actualTemperatureElement {
+    margin-left: 40px;
+    margin-right: 50px;
+    margin-top: 10px; } }
+
+.weather {
+  margin: 0;
+  font-size: 25px;
+  font-weight: lighter; }
+
+/***
+ *      _   _           _     _____                  
+ *     | \ | |         | |   |  __ \                 
+ *     |  \| | _____  _| |_  | |  | | __ _ _   _ ___ 
+ *     | . ` |/ _ \ \/ / __| | |  | |/ _` | | | / __|
+ *     | |\  |  __/>  <| |_  | |__| | (_| | |_| \__ \
+ *     |_| \_|\___/_/\_\\__| |_____/ \__,_|\__, |___/
+ *                                          __/ |    
+ *                                         |___/     
+ */
+.nextDaysContainer {
+  overflow-x: scroll;
+  align-items: stretch; }
+  .nextDaysContainer .col {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center; }
+
+.temperatureIcon {
+  font-size: 34px; }
+  .temperatureIcon:hover {
+    color: #fc7d6d; }

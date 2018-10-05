@@ -1,0 +1,68 @@
+/* General Styles - Mobile First */
+@import "assets/styles/constants.scss";
+@import "assets/tools/breakpoints.scss";
+@import "assets/vendor/bemify.scss";
+@import "./weather-icons.min.css";
+
+body {
+  background-color: $default-background-color;
+  font-family: $roboto-slab;
+}
+p {
+  color: $color-blue-bayoux;
+  font-size: $size-mobile-normal-text;
+  @include min-small {
+    font-size: $size-normal-text;
+  }
+}
+.title {
+  margin: 0;
+  font-size: $size-mobile-titles;
+  color: $color-blue-bayoux;
+  display: inline-block;
+  @include min-small {
+    font-size: $size-titles;
+  }
+}
+.subtitle {
+  margin: 0;
+  font-size: $size-mobile-subtitles;
+  color: $color-blue-bayoux;
+  font-weight: 100;
+  display: inline-block;
+  @include min-small {
+    font-size: $size-subtitles;
+  }
+}
+
+@include block("visible-mobile") {
+  display: block;
+
+  @include min-small {
+    display: none;
+  }
+}
+
+@include block("visible-desktop") {
+  display: none;
+
+  @include min-small {
+    display: block;
+  }
+}
+
+@include block("visible-mobile-flex") {
+  display: flex;
+
+  @include min-small {
+    display: none;
+  }
+}
+
+@include block("visible-desktop-flex") {
+  display: none;
+
+  @include min-small {
+    display: flex;
+  }
+}
