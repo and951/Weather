@@ -128,12 +128,12 @@ class WeatherForecast extends Component {
           {Object.keys(this.props.weatherObj.nextDays).map((weatherKey) => {
             return <div class="col">
               <div class="flex-grid">
-                <div class="col">{weatherKey}</div>
+                <div class="col"><p className="temperatureFont">{weatherKey}</p></div>
               </div>
               <div class="flex-grid">
                 <div class="col"><i class={"wi temperatureIcon " + this.props.weatherObj.nextDays[weatherKey].icon}></i></div>
               </div>
-              <div class="col">{this.calculateTemp(this.props.weatherObj.nextDays[weatherKey].temperature)}</div>
+              <div class="col"><p className="temperatureFont">{this.calculateTemp(this.props.weatherObj.nextDays[weatherKey].temperature)}</p></div>
             </div>
           })}
 

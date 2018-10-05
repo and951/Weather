@@ -18,7 +18,7 @@
   padding: 25px;
   @include min-small {
     display: block;
-    padding: 50px;
+    padding: 75px;
   }
 }
 .flex-grid {
@@ -65,8 +65,8 @@
 .cityName {
   margin: 0;
   display: inline-block;
-  font-size: 34px;
-  font-weight: bolder;
+  font-size: 40px;
+  font-weight: bold;
   margin-left: 25px;
 }
 
@@ -87,21 +87,30 @@
 .switchButton {
   cursor: pointer;
   position: absolute;
-  right: 50px;
+  right: 10px;
+  @include min-small {
+    right: 140px;
+  }
+
   display: inline-block;
   border-radius: 25px;
   h6 {
+    font-size: 10px;
     margin: 5px;
   }
   &.react-toggle .react-toggle-track {
     background-color: white;
     border: 1px solid $color-black;
+    width: 70px;
   }
   &.react-toggle--checked .react-toggle-track {
     background-color: white;
     h6 {
       margin-left: 0px;
     }
+  }
+  &.react-toggle--checked .react-toggle-thumb {
+    left: 50px;
   }
 }
 .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
@@ -148,6 +157,7 @@
 .actualTemperature {
   font-size: $size-mobile-big-titles;
   color: $color-tonys-pink;
+  font-weight: bold;
 
   margin-right: 100%;
 
@@ -163,13 +173,16 @@
   @include min-small {
     margin-left: 40px;
     margin-right: 50px;
-    margin-top: 10px;
+    margin-top: 12px;
   }
 }
 
 .weather {
-  margin: 0;
-  font-size: 25px;
+  @include min-small {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  font-size: 34px;
   font-weight: lighter;
 }
 
@@ -186,6 +199,7 @@
 
 .nextDaysContainer {
   @include min-small {
+    margin-left: -30px;
     margin-top: 5%;
   }
   overflow-x: scroll;
@@ -199,8 +213,21 @@
 }
 
 .temperatureIcon {
-  font-size: $size-subtitles;
-
+  font-size: $size-mobile-titles;
+  color: $color-blue-bayoux;
+  display: inline-block;
+  @include min-small {
+    font-size: $size-titles;
+  }
+  &:hover {
+    color: $default-active-color;
+  }
+}
+.temperatureFont {
+  font-size: 8px;
+  @include min-small {
+    font-size: 17px;
+  }
   &:hover {
     color: $default-active-color;
   }

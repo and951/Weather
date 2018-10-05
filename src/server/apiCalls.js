@@ -9,8 +9,6 @@
  * Description: This module manage all the API calls and their response. 
  */
 import config from '../config/env'
-
-import axios from 'axios';
 import { getUrl } from '../utils/generalFunctions'
 import {
   GET_WEATHER_BY_GEOLOC,

@@ -16,7 +16,7 @@
   @media only screen and (min-width: 768px) {
     .container {
       display: block;
-      padding: 50px; } }
+      padding: 75px; } }
 
 .flex-grid {
   display: flex; }
@@ -58,8 +58,8 @@
 .cityName {
   margin: 0;
   display: inline-block;
-  font-size: 34px;
-  font-weight: bolder;
+  font-size: 40px;
+  font-weight: bold;
   margin-left: 25px; }
 
 .goBackIcon {
@@ -76,18 +76,25 @@
 .switchButton {
   cursor: pointer;
   position: absolute;
-  right: 50px;
+  right: 10px;
   display: inline-block;
   border-radius: 25px; }
+  @media only screen and (min-width: 768px) {
+    .switchButton {
+      right: 140px; } }
   .switchButton h6 {
+    font-size: 10px;
     margin: 5px; }
   .switchButton.react-toggle .react-toggle-track {
     background-color: white;
-    border: 1px solid #000000; }
+    border: 1px solid #000000;
+    width: 70px; }
   .switchButton.react-toggle--checked .react-toggle-track {
     background-color: white; }
     .switchButton.react-toggle--checked .react-toggle-track h6 {
       margin-left: 0px; }
+  .switchButton.react-toggle--checked .react-toggle-thumb {
+    left: 50px; }
 
 .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
   background-color: white; }
@@ -127,6 +134,7 @@
 .actualTemperature {
   font-size: 70px;
   color: #e39784;
+  font-weight: bold;
   margin-right: 100%; }
   @media only screen and (min-width: 768px) {
     .actualTemperature {
@@ -140,12 +148,15 @@
   .actualTemperatureElement {
     margin-left: 40px;
     margin-right: 50px;
-    margin-top: 10px; } }
+    margin-top: 12px; } }
 
 .weather {
-  margin: 0;
-  font-size: 25px;
+  font-size: 34px;
   font-weight: lighter; }
+  @media only screen and (min-width: 768px) {
+    .weather {
+      margin-top: 15px;
+      margin-bottom: 15px; } }
 
 /***
  *      _   _           _     _____                  
@@ -162,6 +173,7 @@
   align-items: stretch; }
   @media only screen and (min-width: 768px) {
     .nextDaysContainer {
+      margin-left: -30px;
       margin-top: 5%; } }
   .nextDaysContainer .col {
     margin-top: 10px;
@@ -170,6 +182,19 @@
     text-align: center; }
 
 .temperatureIcon {
-  font-size: 34px; }
+  font-size: 20px;
+  color: #4d6773;
+  display: inline-block; }
+  @media only screen and (min-width: 768px) {
+    .temperatureIcon {
+      font-size: 43px; } }
   .temperatureIcon:hover {
+    color: #fc7d6d; }
+
+.temperatureFont {
+  font-size: 8px; }
+  @media only screen and (min-width: 768px) {
+    .temperatureFont {
+      font-size: 17px; } }
+  .temperatureFont:hover {
     color: #fc7d6d; }

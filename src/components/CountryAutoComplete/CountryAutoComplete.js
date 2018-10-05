@@ -13,8 +13,6 @@ import './styles.css'
 //Dependencies
 import PlacesAutocomplete, {
   geocodeByAddress,
-  geocodeByPlaceId,
-  getLatLng,
 } from 'react-places-autocomplete';
 import MaterialIcon from 'material-icons-react';
 

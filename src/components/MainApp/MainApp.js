@@ -14,16 +14,11 @@ class MainApp extends Component {
     super(props)
     // To show that the state si saved and can be getted even when it is reloded.
     console.log(localStorage.getItem('persistentState'))
-    const { cookies } = this.props;
     this.state = {
       weatherObj: null
 
     }
   }
-
-  componentWillMount() {
-  }
-
   onPlaceSelected(address) {
     getLatLng(address).then(latLng =>
       getWeatherByGeoloc(latLng.lat, latLng.lng).then(weatherObj => {
@@ -60,8 +55,6 @@ class MainApp extends Component {
         normalizedWeatherObj[actualTimeOfDay] = actualWeatherObj.main.temp;
       }
     })
-    console.log(normalizedWeatherObj);
-
     return normalizedWeatherObj
 
   }
@@ -93,7 +86,7 @@ class MainApp extends Component {
     var split_evening = 17 //24hr time to split the evening
     var currentHour = moment(timestamp, 'YYYY-DD-MM hh:mm:ss').format("HH");
     if (currentHour >= split_afternoon && currentHour <= split_evening) {
-      timeOfDay = "afternoon";
+      timeOfDay = "noon";
     } else if (currentHour >= split_evening) {
       timeOfDay = "evening";
     } else if (currentHour >= morning) {

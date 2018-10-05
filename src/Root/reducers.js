@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-import country from '../modules/Country/country'
-import weather from '../modules/Weather/weather'
+//import country from '../modules/Country/country'
+//import weather from '../modules/Weather/weather'
 
 /**
 What I found is that you should consider using Redux when:
